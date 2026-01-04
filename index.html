@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eleven</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Eleven</h1>
+        <button id="generate-decks">Generate 100,000 Decks</button>
+        <button id="help-btn">What am I looking at?</button>
+    </header>
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Eleven</h2>
+            <p>A solitaire card game played with a standard 52-card deck on a 3×3 grid.</p>
+
+            <h3>How to Play</h3>
+            <ul>
+                <li>Deal cards one at a time onto the 3×3 grid</li>
+                <li>As soon as a valid match appears, replace those cards with the next cards from the deck</li>
+                <li>Continue dealing until all 9 positions are filled</li>
+                <li>Keep matching and replacing until no moves remain</li>
+            </ul>
+
+            <h3>Valid Matches</h3>
+            <ul>
+                <li><strong>Pairs that sum to 11:</strong> A+10, 2+9, 3+8, 4+7, 5+6</li>
+                <li><strong>Face card trio:</strong> J+Q+K (any suits)</li>
+            </ul>
+
+            <h3>Win / Lose</h3>
+            <ul>
+                <li><strong>Win:</strong> The draw pile is emptied</li>
+                <li><strong>Lose:</strong> No valid matches while cards remain in the pile</li>
+            </ul>
+
+            <h3>This Site</h3>
+            <p>Each tile represents one shuffled deck, simulated to completion. The fill shows progress through the draw pile.</p>
+            <ul>
+                <li><span class="win">Green</span> = Win</li>
+                <li><span class="loss">Red</span> = Loss</li>
+            </ul>
+            <p>Click any tile to inspect the game: grids, pile heights, and statistics.</p>
+        </div>
+    </div>
+    <main>
+        <div id="decks-container"></div>
+        <div id="detail-container"></div>
+    </main>
+    <script src="game.js"></script>
+</body>
+</html>
